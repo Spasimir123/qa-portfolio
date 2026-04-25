@@ -1,0 +1,237 @@
+{
+  "info": {
+    "_postman_id": "55414201-9ece-41bc-bd19-d99ce45a43be",
+    "name": "Exam film app",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53529989",
+    "_collection_link": "https://go.postman.co/collection/53529989-55414201-9ece-41bc-bd19-d99ce45a43be?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Createuser",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userName\": \"Spas123\",\r\n    \"firstName\": \"Spasimir\",\r\n    \"lastName\": \"Spasov\",\r\n    \"email\": \"Spas123@example.com\",\r\n    \"password\": \"Test123\",\r\n    \"rePassword\": \"Test123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://144.91.123.158:5000/api/User/Register",
+          "protocol": "http",
+          "host": [
+            "144",
+            "91",
+            "123",
+            "158"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "User",
+            "Register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Loginuser",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"Spas123@example.com\",\r\n    \"password\": \"Test123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://144.91.123.158:5000/api/User/Authentication",
+          "protocol": "http",
+          "host": [
+            "144",
+            "91",
+            "123",
+            "158"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "User",
+            "Authentication"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a movie",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Blacops\",\r\n    \"description\": \"fight\",\r\n    \"posterUrl\": \"\",\r\n    \"trailerLink\": \"\",\r\n    \"isWatched\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://144.91.123.158:5000/api/movie/create",
+          "protocol": "http",
+          "host": [
+            "144",
+            "91",
+            "123",
+            "158"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "movie",
+            "create"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Editmovie",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Pantera2\",\r\n    \"description\": \"Trashtalking\",\r\n    \"posterUrl\": \"\",\r\n    \"trailerLink\": \"\",\r\n    \"isWatched\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://144.91.123.158:5000/api/movie/edit?movieid=fc02a53e-c0f6-4fd4-d83a-08de76979b7f",
+          "protocol": "http",
+          "host": [
+            "144",
+            "91",
+            "123",
+            "158"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "movie",
+            "edit"
+          ],
+          "query": [
+            {
+              "key": "movieid",
+              "value": "fc02a53e-c0f6-4fd4-d83a-08de76979b7f"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Deletexisting movie",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://144.91.123.158:5000/api/movie/delete?movieid=fc02a53e-c0f6-4fd4-d83a-08de76979b7f",
+          "protocol": "http",
+          "host": [
+            "144",
+            "91",
+            "123",
+            "158"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "movie",
+            "delete"
+          ],
+          "query": [
+            {
+              "key": "movieid",
+              "value": "fc02a53e-c0f6-4fd4-d83a-08de76979b7f"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Getallmovies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://144.91.123.158:5000/api/Catalog/All",
+          "protocol": "http",
+          "host": [
+            "144",
+            "91",
+            "123",
+            "158"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "Catalog",
+            "All"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJjY2QyNTk4My0yNmRhLTQ5ZDctODA1ZS1hMjY4Y2YwOTg0OTEiLCJpYXQiOiIwNC8xOC8yMDI2IDA3OjMwOjQ3IiwiVXNlcklkIjoiYzVjMTEzZDktNmNjNi00ZDQ3LTYyZTMtMDhkZTc2OTcxYWI5IiwiRW1haWwiOiJTcGFzMTIzQGV4YW1wbGUuY29tIiwiVXNlck5hbWUiOiJTcGFzMTIzIiwiZXhwIjoxNzc2NTE5MDQ3LCJpc3MiOiJNb3ZpZUNhdGFsb2dfQXBwX1NvZnRVbmkiLCJhdWQiOiJNb3ZpZUNhdGFsb2dfV2ViQVBJX1NvZnRVbmkifQ.5LRFSvW5AXXQGTOOCWVq0G7I6bf9KXtkS1x-JB2GYM8",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
